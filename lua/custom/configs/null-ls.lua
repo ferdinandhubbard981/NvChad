@@ -17,9 +17,13 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+  -- Python
+  b.formatting.black.with {filetypes = {"python"}},  -- added "black" for Python formatting here
 }
 
 null_ls.setup {
   debug = true,
   sources = sources,
 }
+

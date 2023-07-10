@@ -12,6 +12,7 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "python",  -- added "python" here for Python support in treesitter
   },
   indent = {
     enable = true,
@@ -37,6 +38,10 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- python stuff
+    "pyright",  -- added "pyright" here for Python language server
+    "black",    -- added "black" here for Python formatter
   },
 }
 
@@ -57,3 +62,4 @@ M.nvimtree = {
 }
 
 return M
+
