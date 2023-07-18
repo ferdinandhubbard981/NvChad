@@ -37,6 +37,9 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+
+    -- python
+    "python-lsp-server",
   },
 }
 

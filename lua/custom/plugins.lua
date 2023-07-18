@@ -46,6 +46,7 @@ local plugins = {
         -- "vue", "svelte",
 
        -- low level
+        "bash",
         "cpp",
         "c",
         "zig"

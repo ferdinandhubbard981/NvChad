@@ -3,7 +3,6 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 
--- if you just want default config for the servers then put them in a table
 local servers = { "html", "cssls", "tsserver", "clangd" }
 
 for _, lsp in ipairs(servers) do
@@ -13,5 +12,22 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
+-- Custom configuration for pylsp
+lspconfig.pylsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    pylsp = {
+      configurationSources = { "pycodestyle" }, -- pycodestyle will read from setup.cfg
+      plugins = {
+        pycodestyle = {
+          enabled = true,
+          ignore = {'E501'},  -- Empty list to ignore nothing, will pull from setup.cfg
+        },
+      },
+    },
+  },
+}
+
 -- lspconfig.pyright.setup { blabla}
+
